@@ -1,3 +1,4 @@
+from datetime import datetime, timezone, timedelta
 import json
 import requests
 from bs4 import BeautifulSoup
@@ -43,7 +44,15 @@ def get_currency_strength():
     sorted_currency_data = dict(
         sorted(currency_data.items(), key=lambda item: item[1], reverse=True)
     )
-    return sorted_currency_data
+
+    # 日本時間 (JST: UTC+9) の現在時刻を取得
+    jst = timezone(timedelta(hours=9))
+    now_str = datetime.now(jst).strftime("%Y-%m-%d %H:%M")
+
+    # データ構造をラップして更新日時を持たせる
+    output_data = {"updated_at": now_str, "strengths": sorted_currency_data}
+
+    return output_data
 
   except Exception as e:
     print(f"Error fetching data: {e}")
