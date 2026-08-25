@@ -2,8 +2,8 @@ name: Fetch Currency Strength
 
 on:
   schedule:
-    # 毎時15分に実行（0分を避けて分散）
-    - cron: '15 * * * *'
+    # 5分おきに実行
+    - cron: '*/5 * * * *'
   workflow_dispatch: # 手動実行も可能
 
 jobs:
