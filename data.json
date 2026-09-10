@@ -1,11 +1,11 @@
 {
-    "updated_at": "2026-09-11 01:54",
+    "updated_at": "2026-09-11 02:04",
     "strengths": {
-        "CAD": 100,
         "EUR": 100,
         "USD": 100,
+        "CAD": 90,
         "GBP": 90,
-        "CHF": 50,
+        "CHF": 40,
         "NZD": 30,
         "JPY": 20,
         "AUD": 10
